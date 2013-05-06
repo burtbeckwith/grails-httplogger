@@ -37,19 +37,19 @@ grails.plugins.httplogger.urlPattern = '/rest/*'
 Plugin should work transparently without any actions. Example output looks like this:
 
 ```
-2013-05-06 17:16:00,331 [http-bio-8080-exec-9] INFO  filters.LogRawRequestInfoFilter  - << #1 GET http://localhost:8080/riddle/rest/index?username=admin&search=foo
-2013-05-06 17:16:00,340 [http-bio-8080-exec-9] INFO  filters.LogRawRequestInfoFilter  - << #1 headers Cookie: 'JSESSIONID=DF4EA5725AC4A4990281BD96963739B0; splashShown1.6=1', Accept-Language: 'en-US,en;q=0.8,pl;q=0.6', X-MyHeader: 'null'
-2013-05-06 17:16:00,342 [http-bio-8080-exec-9] INFO  filters.LogGrailsUrlsInfoFilter  - << #1 dispatched to rest/index with parsed params [username:[admin], search:[foo]].
-2013-05-06 17:16:00,731 [http-bio-8080-exec-9] INFO  filters.LogOutputResponseFilter  - >> #1 returned 200, took 405 ms.
-2013-05-06 17:16:00,745 [http-bio-8080-exec-9] INFO  filters.LogOutputResponseFilter  - >> #1 responded with '{count:0}'
+17:16:00,331 INFO  filters.LogRawRequestInfoFilter  - << #1 GET http://localhost:8080/riddle/rest/index?username=admin&search=foo
+17:16:00,340 INFO  filters.LogRawRequestInfoFilter  - << #1 headers Cookie: 'JSESSIONID=DF4EA5725AC4A4990281BD96963739B0; splashShown1.6=1', Accept-Language: 'en-US,en;q=0.8,pl;q=0.6', X-MyHeader: 'null'
+17:16:00,342 INFO  filters.LogGrailsUrlsInfoFilter  - << #1 dispatched to rest/index with parsed params [username:[admin], search:[foo]].
+17:16:00,731 INFO  filters.LogOutputResponseFilter  - >> #1 returned 200, took 405 ms.
+17:16:00,745 INFO  filters.LogOutputResponseFilter  - >> #1 responded with '{count:0}'
 ```
 
 ```
-2013-05-06 17:18:55,799 [http-bio-8080-exec-8] INFO  filters.LogRawRequestInfoFilter  - << #2 POST http://localhost:8080/riddle/third/login
-2013-05-06 17:18:55,799 [http-bio-8080-exec-8] INFO  filters.LogRawRequestInfoFilter  - << #2 headers Cookie: 'JSESSIONID=DF4EA5725AC4A4990281BD96963739B0; splashShown1.6=1', Accept-Language: 'en-US,en;q=0.8,pl;q=0.6', X-MyHeader: 'null'
-2013-05-06 17:18:55,800 [http-bio-8080-exec-8] INFO  filters.LogRawRequestInfoFilter  - << #2 body: 'username=admin&password=password'
-2013-05-06 17:18:55,801 [http-bio-8080-exec-8] INFO  filters.LogOutputResponseFilter  - >> #2 returned 404, took 3 ms.
-2013-05-06 17:18:55,802 [http-bio-8080-exec-8] INFO  filters.LogOutputResponseFilter  - >> #2 responded with ''
+17:18:55,799 INFO  filters.LogRawRequestInfoFilter  - << #2 POST http://localhost:8080/riddle/rest/login
+17:18:55,799 INFO  filters.LogRawRequestInfoFilter  - << #2 headers Cookie: 'JSESSIONID=DF4EA5725AC4A4990281BD96963739B0; splashShown1.6=1', Accept-Language: 'en-US,en;q=0.8,pl;q=0.6', X-MyHeader: 'null'
+17:18:55,800 INFO  filters.LogRawRequestInfoFilter  - << #2 body: 'username=admin&password=password'
+17:18:55,801 INFO  filters.LogOutputResponseFilter  - >> #2 returned 404, took 3 ms.
+17:18:55,802 INFO  filters.LogOutputResponseFilter  - >> #2 responded with ''
 ```
 
 
