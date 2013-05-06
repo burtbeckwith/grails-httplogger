@@ -28,7 +28,7 @@ You can configure it with your `Config.groovy` like this:
 
 ```groovy
 grails.plugins.httplogger.enabled = true
-grails.plugins.httplogger.headers = 'Cookie, Accept-Language'
+grails.plugins.httplogger.headers = 'Cookie, Accept-Language, X-MyHeader'
 grails.plugins.httplogger.urlPattern = '/rest/*'
 ```
 
