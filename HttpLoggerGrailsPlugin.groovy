@@ -21,7 +21,6 @@ import org.springframework.util.StringUtils
 class HttpLoggerGrailsPlugin {
     def version = "1.0"
     def grailsVersion = "2.0 > *"
-    def pluginExcludes = ["grails-app/views/error.gsp"]
     def title = "Http Logger Plugin"
     def author = "Tomasz Kalkosiński"
     def authorEmail = "tomasz.kalkosinski@gmail.com"
@@ -77,7 +76,7 @@ I suggest to map all of your REST controllers with the same path in UrlMappings,
             }
         }
 
-        [LogGrailsUrlsInfoFilter, LogOutputResponseFilter].each { def filterClass ->
+        [LogGrailsUrlsInfoFilter, LogOutputResponseFilter].each { filterClass ->
             contextParam[contextParam.size() - 1] + {
                 'filter' {
                     'filter-name'(StringUtils.uncapitalize(filterClass.simpleName))
@@ -87,7 +86,7 @@ I suggest to map all of your REST controllers with the same path in UrlMappings,
         }
 
         def filter = webXml.'filter'
-        [LogRawRequestInfoFilter, LogOutputResponseFilter].each { def filterClass ->
+        [LogRawRequestInfoFilter, LogOutputResponseFilter].each { filterClass ->
             filter[filter.size() - 1] + {
                 'filter-mapping'{
                     'filter-name'(StringUtils.uncapitalize(filterClass.simpleName))
@@ -96,7 +95,7 @@ I suggest to map all of your REST controllers with the same path in UrlMappings,
                 }
             }
         }
-        [LogGrailsUrlsInfoFilter].each { def filterClass ->
+        [LogGrailsUrlsInfoFilter].each { filterClass ->
             filter[filter.size() - 1] + {
                 'filter-mapping'{
                     'filter-name'(StringUtils.uncapitalize(filterClass.simpleName))
@@ -107,11 +106,4 @@ I suggest to map all of your REST controllers with the same path in UrlMappings,
             }
         }
     }
-
-    def doWithSpring = {}
-    def doWithDynamicMethods = { ctx -> }
-    def doWithApplicationContext = { applicationContext -> }
-    def onChange = { event -> }
-    def onConfigChange = { event -> }
-    def onShutdown = { event -> }
 }
