@@ -14,11 +14,17 @@
  * limitations under the License.
  */
 
-package grails.plugins.httplogger
+package grails.plugins.httplogger;
 
-import javax.servlet.ServletOutputStream
-import javax.servlet.http.HttpServletResponse
-import javax.servlet.http.HttpServletResponseWrapper
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletResponseWrapper;
 
 /**
  * @author Marek Maj <marekmaj2@gmail.com>
@@ -33,11 +39,11 @@ public class MultiReadHttpServletResponse extends HttpServletResponseWrapper {
         super(httpServletResponse);
     }
 
-    public String getCopiedOutput() throws IOException{
+    public String getCopiedOutput() throws IOException {
         if (copiedOutput != null) {
             return new String(copiedOutput.getCopy(), getCharacterEncoding());
         }
-        return new String();
+        return "";
     }
 
     @Override
@@ -84,7 +90,6 @@ public class MultiReadHttpServletResponse extends HttpServletResponseWrapper {
 
         return copiedOutput;
     }
-
 
     private class ServletOutputStreamImpl extends ServletOutputStream {
 

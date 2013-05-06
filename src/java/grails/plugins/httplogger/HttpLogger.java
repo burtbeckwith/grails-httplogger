@@ -14,15 +14,15 @@
  * limitations under the License.
  */
 
-package grails.plugins.httplogger
+package grails.plugins.httplogger;
 
-import java.util.concurrent.atomic.AtomicLong
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * @author Tomasz Kalkosiński <tomasz.kalkosinski@gmail.com>
  */
-class HttpLogger {
-    public static final AtomicLong REQUEST_NUMBER_COUNTER = new AtomicLong()
-    public static final String START_TIME_ATTRIBUTE = 'httplogger.startTime'
-    public static final String REQUEST_NUMBER_ATTRIBUTE = 'httplogger.requestNumber'
+public class HttpLogger {
+    public static final AtomicLong REQUEST_NUMBER_COUNTER = new AtomicLong();
+    public static final String START_TIME_ATTRIBUTE = "httplogger.startTime";
+    public static final String REQUEST_NUMBER_ATTRIBUTE = "httplogger.requestNumber";
 }
