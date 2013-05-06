@@ -8,6 +8,9 @@ It logs:
 * grails dispatch information (controller, action, parameters),
 * response information (elapsed time and body).
 
+It is mostly useful for logging your REST traffic. Full HTTP web pages can be huge to log and generally waste your space.
+I suggest to map all of your REST controllers with the same path in UrlMappings, e.g. `/rest/` and configure this plugin with this path.
+
 ## Installation
 
 Add the following to your `BuildConfig.groovy`
