@@ -1,4 +1,4 @@
-# grails-logtraffic
+# grails-httplogger
 
 Grails plugin for logging HTTP traffic.
 
